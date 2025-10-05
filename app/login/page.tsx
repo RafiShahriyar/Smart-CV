@@ -1,3 +1,5 @@
+import { login, signup } from './actions'
+
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -11,7 +13,22 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function Page() {
+export default function LoginPage() {
+  // return (
+  //   <>
+
+  //   <form>
+  //     <label htmlFor="email">Email:</label>
+  //     <input id="email" name="email" type="email" required />
+  //     <label htmlFor="password">Password:</label>
+  //     <input id="password" name="password" type="password" required />
+  //     <button formAction={login}>Log in</button>
+  //     <button formAction={signup}>Sign up</button>
+  //   </form>
+  //   </>
+  // )
+
+
   return (
     <div className="h-screen flex justify-center items-center bg-gradient-to-b from-neutral-900 from-60% via-sky-900 t0-80% to-sky-700 ">     
       <Card className="w-full max-w-sm bg-transparent text-white">
@@ -29,6 +46,7 @@ export default function Page() {
                   <Input
                     id="email"
                     type="email"
+                    name="email"
                     placeholder="m@example.com"
                     required
                   />
@@ -43,15 +61,15 @@ export default function Page() {
                       Forgot your password?
                     </a>
                   </div>
-                  <Input id="password" type="password" required />
+                  <Input id="password" type="password" name="password" required />
                 </div>
               </div>
             
           </CardContent>
           <CardFooter className="flex-col gap-2">
-            <Button type="submit" className="w-full">
+            <button  formAction={login} className="w-full">
               Login
-            </Button>
+            </button>
             <Button  className="w-full bg-sky-500 ">
               Login with Google
             </Button>
