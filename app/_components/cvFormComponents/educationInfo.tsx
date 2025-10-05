@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CVDataEducation } from "../../cv-maker/page";
 import { Plus, Trash2, ChevronDown, ChevronUp } from "lucide-react";
 
+
 interface Props {
   cvDataEducation: CVDataEducation[];
   setCvDataEducation: React.Dispatch<React.SetStateAction<CVDataEducation[]>>;
@@ -44,6 +45,7 @@ const EducationInfo: React.FC<Props> = ({
   return (
     <div className="flex flex-col h-screen bg-white shadow-2xl rounded-sm">
       {/* Scrollable content */}
+
       <div className="flex-1 overflow-y-auto p-10 space-y-6 text-black">
         <h2 className="text-xl font-semibold text-purple-600">Education</h2>
 
