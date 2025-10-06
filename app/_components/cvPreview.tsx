@@ -2,17 +2,23 @@ import React, { useRef } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { CVDataPersonal } from "../cv-maker/page";
-import { CVDataExperience} from "../cv-maker/page";
+import { CVDataExperience } from "../cv-maker/page";
 import { CVDataEducation } from "../cv-maker/page";
+import { CVDataSkills } from "../cv-maker/page";
 
 interface Props {
   CVDataPersonal: CVDataPersonal;
   CVDataExperience: CVDataExperience[];
   CVDataEducation: CVDataEducation[];
-
+  CVDataSkills: CVDataSkills[];
 }
 
-const CVPreview: React.FC<Props> = ({ CVDataPersonal, CVDataExperience, CVDataEducation }) => {
+const CVPreview: React.FC<Props> = ({
+  CVDataPersonal,
+  CVDataExperience,
+  CVDataEducation,
+  CVDataSkills,
+}) => {
   const cvRef = useRef<HTMLDivElement>(null);
 
   const exportPDF = async () => {
@@ -37,43 +43,68 @@ const CVPreview: React.FC<Props> = ({ CVDataPersonal, CVDataExperience, CVDataEd
     <div className="border p-10 bg-white shadow-lg text-black">
       <div ref={cvRef}>
         {/* Personal Info */}
-        <h1 className="text-2xl font-bold mb-3 ">{CVDataPersonal.firstName+" "+CVDataPersonal.lastName}</h1>
-        <h1 className="text-xl font-semibold ">{CVDataPersonal.jobTitle} | {CVDataPersonal.linkedIn} | {CVDataPersonal.github} </h1>
-        <p className="mb-5">{CVDataPersonal.address}, {CVDataPersonal.city}, {CVDataPersonal.country} | {CVDataPersonal.email} | {CVDataPersonal.phone} </p>
-        
+        <h1 className="text-2xl font-bold mb-3 ">
+          {CVDataPersonal.firstName + " " + CVDataPersonal.lastName}
+        </h1>
+        <h1 className="text-xl font-semibold ">
+          {CVDataPersonal.jobTitle} | {CVDataPersonal.linkedIn} |{" "}
+          {CVDataPersonal.github}{" "}
+        </h1>
+        <p className="mb-5">
+          {CVDataPersonal.address}, {CVDataPersonal.city},{" "}
+          {CVDataPersonal.country} | {CVDataPersonal.email} |{" "}
+          {CVDataPersonal.phone}{" "}
+        </p>
+
         {/* Experience */}
-        <div className='border w-full border-black'></div>
+        <div className="border w-full border-black"></div>
         <p className="font-semibold mt-1 mb-1">PROFESSIONAL EXPERIENCE</p>
-        <div className='border w-full border-black'></div>
-        {CVDataExperience.map((exp,idx)=>(
+        <div className="border w-full border-black"></div>
+        {CVDataExperience.map((exp, idx) => (
           <div key={idx} className="mt-3">
             <div className="flex justify-between">
-              <p  className="font-bold  mb-2 text-md">{exp.jobTitle}, {exp.companyName} </p>
-              <p  className="font-bold  mb-2 text-md">{exp.startDate} - {exp.endDate} </p>
+              <p className="font-bold  mb-2 text-md">
+                {exp.jobTitle}, {exp.companyName}{" "}
+              </p>
+              <p className="font-bold  mb-2 text-md">
+                {exp.startDate} - {exp.endDate}{" "}
+              </p>
             </div>
             <p>{exp.description} </p>
-          </div>   
+          </div>
         ))}
 
         {/* Education */}
-        <div className='border w-full border-black mt-4'></div>
+        <div className="border w-full border-black mt-4"></div>
         <p className="font-semibold mt-1 mb-1">Education</p>
-        <div className='border w-full border-black'></div>
-        {CVDataEducation.map((edu,idx)=>(
+        <div className="border w-full border-black"></div>
+        {CVDataEducation.map((edu, idx) => (
           <div key={idx} className="mt-3">
             <div className="flex justify-between">
-              <p  className="font-bold  mb-1 text-md">{edu.degree} </p>
-              <p  className="font-bold  mb-1 text-md">{edu.startDate} - {edu.endDate} </p>
+              <p className="font-bold  mb-1 text-md">{edu.degree} </p>
+              <p className="font-bold  mb-1 text-md">
+                {edu.startDate} - {edu.endDate}{" "}
+              </p>
             </div>
             <div className="flex justify-between mb-3">
               <p className="text-md font-semibold">{edu.school}</p>
-              <p className="text-md font-semibold">{"CGPA: "+edu.cgpa}</p>
+              <p className="text-md font-semibold">{"CGPA: " + edu.cgpa}</p>
             </div>
 
             <p>{edu.description} </p>
-          </div>   
+          </div>
         ))}
 
+        {/* Skills */}
+        <div className="border w-full border-black mt-4"></div>
+        <p className="font-semibold mt-1 mb-1">Skills</p>
+        <div className="border w-full border-black"></div>
+        {CVDataSkills.map((skill, idx) => (
+          <div key={idx} className="mt-3">
+            <p className="text-md font-semibold">{skill.field}+' - '</p>
+            <p className="text-md">{skill.skill} </p>
+          </div>
+        ))}
       </div>
 
       <button

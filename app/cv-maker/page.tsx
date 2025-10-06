@@ -1,125 +1,155 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import PersonalInfo from '../_components/cvFormComponents/personalInfo';
-import CVPreview from '../_components/cvPreview';
-import ExperienceInfo from '../_components/cvFormComponents/experienceInfo'
-import EducationInfo from '../_components/cvFormComponents/educationInfo';
+import React, { useState } from "react";
+import PersonalInfo from "../_components/cvFormComponents/personalInfo";
+import CVPreview from "../_components/cvPreview";
+import ExperienceInfo from "../_components/cvFormComponents/experienceInfo";
+import EducationInfo from "../_components/cvFormComponents/educationInfo";
+import SkillsInfo from "../_components/cvFormComponents/skillsInfo";
 
 export interface CVDataPersonal {
-    firstName: string;
-    lastName: string,
-    email: string;
-    phone: string;
-    jobTitle: string,
-    address: string,
-    city: string,
-    country: string,
-    linkedIn: string,
-    github: string
-  }
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  jobTitle: string;
+  address: string;
+  city: string;
+  country: string;
+  linkedIn: string;
+  github: string;
+}
 
 export interface CVDataExperience {
-    companyName: string;
-    jobTitle: string;
-    startDate: string;
-    endDate: string;
-    description: string;
-  }
+  companyName: string;
+  jobTitle: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
 
-  export interface CVDataEducation {
-    school: string;
-    degree: string;
-    startDate: string;
-    endDate: string;
-    cgpa: string;
-    description: string;
-  }
+export interface CVDataEducation {
+  school: string;
+  degree: string;
+  startDate: string;
+  endDate: string;
+  cgpa: string;
+  description: string;
+}
+
+export interface CVDataSkills {
+  field: string;
+  skill: string;
+}
 
 const CvBuilderPage = () => {
-    
-    const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(1);
 
-    const [cvDataPersonal, setCvDataPersonal] = useState<CVDataPersonal>({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        jobTitle: "",
-        address: "",
-        city: "",
-        country: "",
-        linkedIn: "",
-        github: ""
-      });
+  const [cvDataPersonal, setCvDataPersonal] = useState<CVDataPersonal>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    jobTitle: "",
+    address: "",
+    city: "",
+    country: "",
+    linkedIn: "",
+    github: "",
+  });
 
-    const [cvDataExperience, setCvDataExperience] = useState<CVDataExperience[]>([{
+  const [cvDataExperience, setCvDataExperience] = useState<CVDataExperience[]>([
+    {
       companyName: "",
       jobTitle: "",
       startDate: "",
       endDate: "",
-      description: ""
-    }] );
+      description: "",
+    },
+  ]);
 
-    const [cvDataEducation, setCvDataEducation] = useState<CVDataEducation[]>([{
+  const [cvDataEducation, setCvDataEducation] = useState<CVDataEducation[]>([
+    {
       school: "",
       degree: "",
       startDate: "",
       endDate: "",
       cgpa: "",
       description: "",
-    }] );
-    
-    const handleNextStep = () => {
-      setStep(step + 1);
-    }
-    const handlePreviousStep = () => {
-      setStep(step - 1);
-    }
+    },
+  ]);
 
-      return (
-        <div className="bg-gray-100 min-h-screen">
-          <div className="grid grid-cols-12 gap-6">
-            {/* Left: Form */}
-            {step === 1 && (
-              <div className="col-span-12 md:col-span-6">
-                <PersonalInfo
-                  cvDataPersonal={cvDataPersonal}
-                  setCvDataPersonal={setCvDataPersonal}
-                  handleNextStep={handleNextStep}
-                  handlePreviousStep={handlePreviousStep}
-                />
-              </div>
-            )}
-            {step === 2 && (
-              <div className="col-span-12 md:col-span-6">
-                <ExperienceInfo
-                  cvDataExperience={cvDataExperience}
-                  setCvDataExperience={setCvDataExperience}
-                  handleNextStep={handleNextStep}
-                  handlePreviousStep={handlePreviousStep}
-                />
-              </div>
-            )}
-            {step === 3 && (
-              <div className="col-span-12 md:col-span-6">
-                <EducationInfo
-                  cvDataEducation={cvDataEducation}
-                  setCvDataEducation={setCvDataEducation}
-                  handleNextStep={handleNextStep}
-                  handlePreviousStep={handlePreviousStep}
-                />
-              </div>
-            )}
+  const [cvDataSkills, setCvDataSkills] = useState<CVDataSkills[]>([
+    {
+      field: "",
+      skill: "",
+    },
+  ]);
 
-            {/* Right: CV Preview (hidden on small screens) */}
-            <div className="hidden md:block md:col-span-6">
-              <CVPreview CVDataPersonal={cvDataPersonal} CVDataExperience={cvDataExperience} CVDataEducation={cvDataEducation} />
-            </div>
+  const handleNextStep = () => {
+    setStep(step + 1);
+  };
+  const handlePreviousStep = () => {
+    setStep(step - 1);
+  };
+
+  return (
+    <div className="bg-gray-100 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
+        {/* Left: Form */}
+        {step === 1 && (
+          <div className="col-span-12 md:col-span-6">
+            <PersonalInfo
+              cvDataPersonal={cvDataPersonal}
+              setCvDataPersonal={setCvDataPersonal}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+            />
           </div>
+        )}
+        {step === 2 && (
+          <div className="col-span-12 md:col-span-6">
+            <ExperienceInfo
+              cvDataExperience={cvDataExperience}
+              setCvDataExperience={setCvDataExperience}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+            />
+          </div>
+        )}
+        {step === 3 && (
+          <div className="col-span-12 md:col-span-6">
+            <EducationInfo
+              cvDataEducation={cvDataEducation}
+              setCvDataEducation={setCvDataEducation}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+            />
+          </div>
+        )}
+        {step === 4 && (
+          <div className="col-span-12 md:col-span-6">
+            <SkillsInfo
+              cvDataSkills={cvDataSkills}
+              setCvDataSkills={setCvDataSkills}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+            />
+          </div>
+        )}
+
+        {/* Right: CV Preview (hidden on small screens) */}
+        <div className="hidden md:block md:col-span-6">
+          <CVPreview
+            CVDataPersonal={cvDataPersonal}
+            CVDataExperience={cvDataExperience}
+            CVDataEducation={cvDataEducation}
+            CVDataSkills={cvDataSkills}
+          />
         </div>
+      </div>
+    </div>
+  );
+};
 
-      );
-    };
-
-export default CvBuilderPage
+export default CvBuilderPage;
