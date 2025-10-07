@@ -46,6 +46,7 @@ const CVPreview: React.FC<Props> = ({
         <h1 className="text-2xl font-bold mb-3 ">
           {CVDataPersonal.firstName + " " + CVDataPersonal.lastName}
         </h1>
+
         <h1 className="text-xl font-semibold ">
           {CVDataPersonal.jobTitle} | {CVDataPersonal.linkedIn} |{" "}
           {CVDataPersonal.github}{" "}
@@ -101,8 +102,10 @@ const CVPreview: React.FC<Props> = ({
         <div className="border w-full border-black"></div>
         {CVDataSkills.map((skill, idx) => (
           <div key={idx} className="mt-3">
-            <p className="text-md font-semibold">{skill.field}+' - '</p>
-            <p className="text-md">{skill.skill} </p>
+            <div className="flex flex-row">
+              <p className="text-md font-semibold">{skill.field + " - "}</p>
+              <p className="text-md">{skill.skill} </p>
+            </div>
           </div>
         ))}
       </div>

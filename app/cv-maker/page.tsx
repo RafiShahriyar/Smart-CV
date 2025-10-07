@@ -6,6 +6,7 @@ import CVPreview from "../_components/cvPreview";
 import ExperienceInfo from "../_components/cvFormComponents/experienceInfo";
 import EducationInfo from "../_components/cvFormComponents/educationInfo";
 import SkillsInfo from "../_components/cvFormComponents/skillsInfo";
+import ProjectsInfo from "../_components/cvFormComponents/projectsInfo";
 
 export interface CVDataPersonal {
   firstName: string;
@@ -40,6 +41,12 @@ export interface CVDataEducation {
 export interface CVDataSkills {
   field: string;
   skill: string;
+}
+
+export interface CVDataProjects {
+  projectName: string;
+  tools: string;
+  description: string;
 }
 
 const CvBuilderPage = () => {
@@ -83,6 +90,14 @@ const CvBuilderPage = () => {
     {
       field: "",
       skill: "",
+    },
+  ]);
+
+  const [cvDataProjects, setCvDataProjects] = useState<CVDataProjects[]>([
+    {
+      projectName: "",
+      tools: "",
+      description: "",
     },
   ]);
 
@@ -132,6 +147,17 @@ const CvBuilderPage = () => {
             <SkillsInfo
               cvDataSkills={cvDataSkills}
               setCvDataSkills={setCvDataSkills}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+            />
+          </div>
+        )}
+
+        {step === 5 && (
+          <div className="col-span-12 md:col-span-6">
+            <ProjectsInfo
+              cvDataProjects={cvDataProjects}
+              setCvDataProjects={setCvDataProjects}
               handleNextStep={handleNextStep}
               handlePreviousStep={handlePreviousStep}
             />
