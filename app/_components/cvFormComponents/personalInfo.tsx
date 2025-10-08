@@ -16,7 +16,7 @@ const PersonalInfo: React.FC<Props> = ({ cvDataPersonal, setCvDataPersonal, hand
         <h2 className="text-xl font-semibold text-purple-600">Personal </h2>
         <h2 className="text-xl font-semibold">Details </h2>
       </div>
-      <div className="grid grid-cols-12 gap-4 grid-flow-dense">
+      <div className="grid grid-cols-12 gap-4 grid-flow-dense pb-60">
 
         {/* Photo */}
         <div className="md:col-span-4 col-span-2 row-span-2 group relative">
@@ -233,31 +233,30 @@ const PersonalInfo: React.FC<Props> = ({ cvDataPersonal, setCvDataPersonal, hand
             {/* Animated underline */}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-purple-600 transition-all duration-300 group-focus-within:w-full"></span>
         </div>
+        
+      </div>   
 
-        {/* Progress Bars */}
-        <div className=" col-span-3 w-full border-2 border-purple-600 mt-56"></div>
-        <div className=" col-span-3 w-full border-2 border-gray-200 mt-56"></div>
-        <div className=" col-span-3 w-full border-2 border-gray-200 mt-56"></div>
-        <div className=" col-span-3 w-full border-2 border-gray-200 mt-56"></div>
-
-        {/* Progress Dots */}
-        <div className="col-span-9 flex flex-row gap-2 mt-4 pl-4 ">
-            {/* <div className="w-3 h-3 rounded-full bg-purple-600"></div>
-            <div className="w-3 h-3 rounded-full bg-zinc-200"></div>
-            <div className="w-3 h-3 rounded-full bg-zinc-200"></div>
-            <div className="w-3 h-3 rounded-full bg-zinc-200"></div> */}
+      <div className="">
+        {/* Progress bar */}
+        <div className="flex gap-2 mb-4 py-6">
+            <div className="flex-1 border-2 border-purple-600"></div>
+            <div className="flex-1 border-2 border-gray-200"></div>
+            <div className="flex-1 border-2 border-gray-200"></div>
+            <div className="flex-1 border-2 border-gray-200"></div>
         </div>
 
-        <button 
-            className=" col-span-3 flex justify-center items-center rounded-lg mt-5
-          bg-purple-700 border-2 hover:bg-white
-          hover:border-purple-700 hover:text-purple-600 text-white px-10 py-2"
-          onClick={handleNextStep}
-        >
+
+        {/* Navigation buttons */}
+        <div className="flex justify-end">
+
+            <button
+            className="px-24 py-2 rounded border-2 border-purple-600 bg-purple-600 hover:bg-white hover:text-purple-600 text-white"
+            onClick={handleNextStep}
+            >
             Next
-        </button>
-        
-      </div>     
+            </button>
+        </div>
+      </div>
 
 
 

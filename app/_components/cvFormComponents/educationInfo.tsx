@@ -213,7 +213,7 @@ const EducationInfo: React.FC<Props> = ({
             Next
             </button>
         </div>
-       </div>
+      </div>
 
     </div>
   );

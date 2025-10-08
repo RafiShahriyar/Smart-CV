@@ -66,9 +66,11 @@ const LandingPage = () => {
                 Try Now
             </button>
           </Link>
-          <button className="text-xl px-7 py-2  backdrop-blur-md rounded-full  bg-purple-600 hover:scale-105 transition transform duration-300">
-            Learn More
-          </button>
+          <Link href='/side'>
+            <button className="text-xl px-7 py-2  backdrop-blur-md rounded-full  bg-purple-600 hover:scale-105 transition transform duration-300">
+              Learn More
+            </button>
+          </Link>
         </div>
       </div>
 
