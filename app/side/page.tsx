@@ -1,49 +1,68 @@
-import { AppSidebar } from "@/components/app-sidebar" 
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, } from "@/components/ui/breadcrumb" 
-import { Separator } from "@/components/ui/separator" 
-import { SidebarInset, SidebarProvider, SidebarTrigger, } from "@/components/ui/sidebar"
+import React from "react";
 
-export default function Page() {
-    return (
-      <SidebarProvider>
-        <div className="flex min-h-screen">
-          {/* Sidebar */}
-          <AppSidebar />
-  
-          {/* Main Content */}
-          <SidebarInset className="flex-1 flex flex-col">
-            <header className="flex h-16 shrink-0 items-center gap-2 border-b bg-background px-4">
-              <SidebarTrigger className="-ml-1" />
-              <Separator
-                orientation="vertical"
-                className="mr-2 data-[orientation=vertical]:h-4"
-              />
-              <Breadcrumb>
-                <BreadcrumbList>
-                  <BreadcrumbItem className="hidden md:block">
-                    <BreadcrumbLink href="#">
-                      Building Your Application
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator className="hidden md:block" />
-                  <BreadcrumbItem>
-                    <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                  </BreadcrumbItem>
-                </BreadcrumbList>
-              </Breadcrumb>
-            </header>
-  
-            <main className="flex flex-1 flex-col gap-4 p-4">
-              <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                <div className="bg-muted/50 aspect-video rounded-xl" />
-                <div className="bg-muted/50 aspect-video rounded-xl" />
-                <div className="bg-muted/50 aspect-video rounded-xl" />
-              </div>
-              <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
-            </main>
-          </SidebarInset>
+const Home = () => {
+  return (
+    <div className="flex min-h-screen">
+      {/* Sidebar */}
+      <div className="group hidden md:flex flex-col gap-4 round-md p-2 w-[4%] border bg-white shadow-md text-black hover:w-[14%] transition-all duration-300 ease-in-out overflow-hidden">
+        <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
+          <h1>H1</h1>
+          <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
+            Home
+          </h1>
         </div>
-      </SidebarProvider>
-    );
-  }
-  
+        <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
+          <h1>C1</h1>
+          <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
+            Personal Info
+          </h1>
+        </div>
+        <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
+          <h1>C1</h1>
+          <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
+            Hello World
+          </h1>
+        </div>
+        <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
+          <h1>C1</h1>
+          <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
+            Hello World
+          </h1>
+        </div>
+        <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
+          <h1>C1</h1>
+          <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
+            Hello World
+          </h1>
+        </div>
+        <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
+          <h1>C1</h1>
+          <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
+            Hello World
+          </h1>
+        </div>
+        <div className="border-2 4"></div>
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div className="bg-white p-4 md:hidden flex flex-row gap-4 p-4 text-black mx-auto min-w-screen">
+        <div className="flex flex-row">
+          <h1>H1</h1>
+          <h1> Hello World</h1>
+        </div>
+        <p>C1</p>
+        <p>C2</p>
+        <p>C3</p>
+        <p>C4</p>
+        <p>C5</p>
+        <p>C6</p>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 bg-black">HHHHHH</div>
+      <div className="flex-1 bg-purple-600"></div>
+    </div>
+  );
+};
+
+export default Home;
