@@ -20,7 +20,8 @@ const CVPreview: React.FC<Props> = ({
   CVDataSkills,
 }) => {
   const cvRef = useRef<HTMLDivElement>(null);
-
+  
+  
   const exportPDF = async () => {
     if (!cvRef.current) return;
 
@@ -71,7 +72,15 @@ const CVPreview: React.FC<Props> = ({
                 {exp.startDate} - {exp.endDate}{" "}
               </p>
             </div>
-            <p>{exp.description} </p>
+            <div
+              className="max-w-none text-sm leading-tight space-y-1 ml-1"
+              dangerouslySetInnerHTML={{
+                __html: exp.description
+                  .replace(/<ol>/g, "<ul>")
+                  .replace(/<\/ol>/g, "</ul>"),
+              }}
+            />
+
           </div>
         ))}
 

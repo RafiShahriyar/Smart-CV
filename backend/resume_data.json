@@ -1,0 +1,247 @@
+{
+  "personal": {
+    "firstName": "Zahin",
+    "lastName": "Wahab",
+    "email": "zahinwahab@gmail.com",
+    "phone": "+880 1521201384",
+    "jobTitle": "N/A",
+    "address": "N/A",
+    "city": "N/A",
+    "country": "N/A",
+    "linkedIn": "N/A",
+    "github": "N/A"
+  },
+  "experience": [
+    {
+      "companyName": "BRAC University",
+      "jobTitle": "N/A",
+      "startDate": "July 2021",
+      "endDate": "Present",
+      "description": "Conducted theory courses including Numerical Methods, Computer Architecture, Artificial Intel-.ligence, and System Analysis Design. Conducted sessional courses including Numerical Methods and Artificial Intelligence. Followed Outcome-Based-.Education: (OBE) concepts while designing new course materials."
+    },
+    {
+      "companyName": "United International University",
+      "jobTitle": "N/A",
+      "startDate": "Feb 2021",
+      "endDate": "June 2021",
+      "description": "Conducted theory courses including Digital Logic Design. ConductedsessionalcoursesincludingDataStructureLaboratory,DigitalLogicDesignLaboratory,.Artificial Intelligence Laboratory."
+    }
+  ],
+  "education": [
+    {
+      "school": "Bangladesh University of Engineering and Technology",
+      "degree": "M.Sc. in Computer Science and Engineering",
+      "startDate": "April 2021",
+      "endDate": "Present",
+      "cgpa": "4.00 on a scale of 4.00",
+      "description": "Thesis concentration: Software Engineering, Programming Language."
+    },
+    {
+      "school": "Bangladesh University of Engineering and Technology",
+      "degree": "B.Sc. in Computer Science and Engineering",
+      "startDate": "Feb 2016",
+      "endDate": "Feb 2021",
+      "cgpa": "3.91 on a scale of 4.00",
+      "description": "Position: 5th in the graduating class of 142 students. Thesis concentration: Bioinformatics, Computational Biology."
+    },
+    {
+      "school": "Dhaka Board",
+      "degree": "Higher Secondary Certificate",
+      "startDate": "2013",
+      "endDate": "2015",
+      "cgpa": "5.00 on a scale of 5.00",
+      "description": "N/A"
+    },
+    {
+      "school": "Dhaka Board",
+      "degree": "Secondary School Certificate",
+      "startDate": "2011",
+      "endDate": "2013",
+      "cgpa": "5.00 on a scale of 5.00",
+      "description": "N/A"
+    }
+  ],
+  "skills": [
+    {
+      "field": "Programming Language",
+      "skill": "C"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "C++"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "Java"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "Python"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "MATLAB"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "Assembly 80x86"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "BASH"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "Perl"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "SQL"
+    },
+    {
+      "field": "Programming Language",
+      "skill": "PL/SQL"
+    },
+    {
+      "field": "Databases",
+      "skill": "Oracle"
+    },
+    {
+      "field": "Databases",
+      "skill": "MySQL"
+    },
+    {
+      "field": "Databases",
+      "skill": "SQLite"
+    },
+    {
+      "field": "Web Development",
+      "skill": "HTML"
+    },
+    {
+      "field": "Web Development",
+      "skill": "CSS"
+    },
+    {
+      "field": "Web Development",
+      "skill": "JavaScript"
+    },
+    {
+      "field": "Frameworks",
+      "skill": "Django"
+    },
+    {
+      "field": "Frameworks",
+      "skill": "JavaFX"
+    },
+    {
+      "field": "Frameworks",
+      "skill": "OpenGL"
+    },
+    {
+      "field": "Frameworks",
+      "skill": "Bootstrap"
+    },
+    {
+      "field": "Environment",
+      "skill": "CodeBlocks"
+    },
+    {
+      "field": "Environment",
+      "skill": "Microsoft Visual Studio"
+    },
+    {
+      "field": "Environment",
+      "skill": "IntelliJ"
+    },
+    {
+      "field": "Environment",
+      "skill": "NetBeans"
+    },
+    {
+      "field": "Environment",
+      "skill": "PyCharm"
+    },
+    {
+      "field": "Environment",
+      "skill": "Emu8086"
+    },
+    {
+      "field": "Operating Systems",
+      "skill": "Linux"
+    },
+    {
+      "field": "Operating Systems",
+      "skill": "Windows"
+    },
+    {
+      "field": "Operating Systems",
+      "skill": "xv6"
+    },
+    {
+      "field": "Embedded Systems",
+      "skill": "AVR Microcontroller (ATMega32)"
+    },
+    {
+      "field": "Embedded Systems",
+      "skill": "Arduino"
+    },
+    {
+      "field": "Simulator",
+      "skill": "Logisim"
+    },
+    {
+      "field": "Simulator",
+      "skill": "Packet Tracer"
+    },
+    {
+      "field": "Simulator",
+      "skill": "Wireshark"
+    },
+    {
+      "field": "Simulator",
+      "skill": "NS-2"
+    },
+    {
+      "field": "Simulator",
+      "skill": "Autocad"
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "GPS Spoofing Detection in VANETs using ML",
+      "tools": "N/A",
+      "description": "Detection of GPS Spoofing attack in a VANET from three consecutive BSM packets using the VeReMi dataset. • Performance comparison with existing two consecutive BSM approach on KNN, Naive Bayes,.Decision Tree and Random Forest models. • Analyzing how three consecutive BSM approach beats the existing two consecutive BSM approach."
+    },
+    {
+      "projectName": "A Comparison of Modern JVM Based Garbage Collectors",
+      "tools": "N/A",
+      "description": "A study of the performance of three JVM based garbage collectors: G1GC, ZGC and Shenandoah. • Observed performance variation with modifying heap sizes by analyzing log files using GCEasy. • Comparing their performance on several big-data benchmarks from two Benchmark Suites: Re-.naissance and DaCapo, on OpenJDK Java version 11.0.15."
+    },
+    {
+      "projectName": "Hotel and Flight Booking System",
+      "tools": "N/A",
+      "description": "Dynamic Web Platform for booking of hotels and flights to be used primarily by tourists. • Users can surf through selective hotel and flight options. • They can confirm booking using payment system like credit/debit card. • They can cancel their booking any time they like as permitted by hotel/airline concerned."
+    },
+    {
+      "projectName": "DHCP Starvation Attack",
+      "tools": "N/A",
+      "description": "Simulation of a DHCP Starvation attack by broadcasting spoofed DHCP request packets. • Created raw sockets using socket() system call in Linux. • Spoofed the chadrr (Client Hardware Address) field in DHCP Discover packet. • Created and sent Spoofed DHCP discover packets until all IP addresses are used up. • Process is repeated until WIFI is forced to shutdown."
+    },
+    {
+      "projectName": "Audio Spectrum Visualizer",
+      "tools": "N/A",
+      "description": "A project to demonstrate frequency spectrum visualization from real time audio via time domain to frequency domain conversion on Atmega32 micro-controller. • Simulates a real time audio signal to frequency spectrum. • Transformation of audio on Atmega32 Micro-controller using Discrete Fourier Transform (DFT). • Inputs taken from Electret Microphone Breakout Circuit. • Outputs the amplitude plotted on two Dot Matrices (shape: 8X8) consist of uniformly distributed.16 frequency bins over 0-4 kHz."
+    },
+    {
+      "projectName": "Simplified C-Compiler",
+      "tools": "N/A",
+      "description": "Developed a full-fledged compiler for a subset of C language. • Lexical Analysis using Flex. • Syntactic Analysis using Bison (yacc). • Intermediate code generated for 8086. • Implemented various optimizations while generating intermediate code such as removing NOPs,.efficient usage of temporary variables, etc."
+    },
+    {
+      "projectName": "Network Models Simulation using NS-2",
+      "tools": "N/A",
+      "description": "Simulated various networking models, parameters by observing different metrics using NS-2. • Performed simulations for Wired and Wireless 802.15.4 static network, cross-network-simulations.between wired and static wireless mode, Satellite and LTE networks. • For wired and wireless modes, variation of basic parameters such as number of nodes, flows, packet.rate, coverage area, speed of nodes were considered. • Measured metrics such as network throughput (average, instantaneous and per-node), end-end.delay, packet delivery and drop ratios, energy consumption, residual energy per node and queue.variation. • Experimented with various modified simulation scenarios such as congestion algorithm, queue size.variation using Random Early Detection (RED) queue, Re-transmission Timeout (RTO) calcula-.tion, AODV routing protocol."
+    }
+  ]
+}

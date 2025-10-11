@@ -1,6 +1,13 @@
+"use client";
 import React, { useState } from "react";
 import { CVDataExperience } from "../../cv-maker/page";
 import { Plus, Trash2, ChevronDown, ChevronUp } from "lucide-react";
+import dynamic from "next/dynamic";
+import "react-quill-new/dist/quill.snow.css";
+
+// Prevent SSR issues
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
+
 
 interface Props {
   cvDataExperience: CVDataExperience[];
@@ -141,11 +148,26 @@ const ExperienceInfo: React.FC<Props> = ({
                   <label className="text-xs text-gray-500 transition-colors duration-300 group-focus-within:text-purple-600">
                     Description
                   </label>
-                  <textarea
+                  {/* <textarea
                     value={exp.description}
                     onChange={(e) => handleChange(index, "description", e.target.value)}
                     className="border w-full p-2 rounded text-sm outline-none"
                     placeholder="Describe your role and achievements..."
+                  /> */}
+                  <ReactQuill
+                    theme="snow"
+                    value={exp.description}
+                    onChange={(e) => handleChange(index, "description", e)}
+                    placeholder="Describe your role and achievements..."
+                    className="border w-full p-2 rounded text-sm outline-none"
+                    modules={{
+                      toolbar: [
+                        ["bold", "italic", "underline", "strike"],
+                        [{ list: "ordered" }, { list: "bullet" }],
+                        ["link"],
+                        ["clean"],
+                      ],
+                    }}
                   />
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-purple-600 transition-all duration-300 group-focus-within:w-full"></span>
                 </div>

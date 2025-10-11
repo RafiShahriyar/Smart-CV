@@ -7,7 +7,7 @@ import ExperienceInfo from "../_components/cvFormComponents/experienceInfo";
 import EducationInfo from "../_components/cvFormComponents/educationInfo";
 import SkillsInfo from "../_components/cvFormComponents/skillsInfo";
 import ProjectsInfo from "../_components/cvFormComponents/projectsInfo";
-
+import Sidebar from "../_components/sidebar";
 export interface CVDataPersonal {
   firstName: string;
   lastName: string;
@@ -109,8 +109,9 @@ const CvBuilderPage = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      <div className="grid grid-cols-12 gap-6">
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <div className="flex-1 grid grid-cols-12 gap-6 bg-gray-100">
         {/* Left: Form */}
         {step === 1 && (
           <div className="col-span-12 md:col-span-6">
