@@ -4,23 +4,25 @@ import { FileText } from 'lucide-react';
 
 const ChooseOptionsPage = () => {
   return (
-    <div className='min-h-screen bg-dark text-white'>
-
-        {/* navbar */}
-        <div className='flex flex-row justify-between shadow-md p-4 gap-6'> 
-            <div className=''>
-                Home
-            </div>
-            <div className='flex flex-row gap-4'>
-                <div>Templates</div>
-                <div>CV-Maker</div>
-                <div>About</div>
-            </div>
-            <div className='flex flex-row gap-4'>
-                <div>Login</div>
-                <div>Sign up</div>
-            </div>           
+    <>
+    {/* navbar */}
+    <div className='flex flex-row justify-between shadow-md p-7 gap-6 border-b border-zinc-800 rounded-lg'> 
+        <div className=''>
+            Home
         </div>
+        <div className='flex flex-row gap-4 '>
+            <div>Templates</div>
+            <div>CV-Maker</div>
+            <div>About</div>
+        </div>
+        <div className='flex flex-row gap-4'>
+            <div className='rounded-2xl border border-purple-600 py-1 px-4'>Login</div>
+            <div className='rounded-2xl border border-gray-400 py-1 px-4'>Sign up</div>
+
+        </div>           
+    </div>
+    
+    <div className='min-h-screen bg-black text-white'>
 
         {/* content */}
         <div className='flex flex-col justify-center items-center h-screen gap-6'>
@@ -96,6 +98,7 @@ const ChooseOptionsPage = () => {
 
 
     </div>
+    </>
   )
 }
 
