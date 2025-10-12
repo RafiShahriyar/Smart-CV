@@ -1,24 +1,49 @@
-// components/Sidebar.tsx
-import React from "react";
+"use client";
 
-const Sidebar = () => {
+import * as React from "react";
+import { ChevronDownIcon } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import { Label } from "@/components/ui/label";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
+export default function Calendar22() {
+  const [open, setOpen] = React.useState(false);
+  const [date, setDate] = React.useState<Date | undefined>(undefined);
+
   return (
-    <div className="group hidden md:flex flex-col gap-4 rounded-md p-2 w-[4%] border bg-white shadow-md text-black hover:w-[12%] transition-all duration-300 ease-in-out overflow-hidden">
-      <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
-        <h1 className="ml-2">H1</h1>
-        <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
-          Home
-        </h1>
-      </div>
-      <div className="flex items-center gap-6 cursor-pointer hover:bg-purple-600/20 p-2 rounded-md">
-        <h1 className="ml-2">C1</h1>
-        <h1 className="whitespace-nowrap opacity-0 group-hover:opacity-100">
-          Personal Info
-        </h1>
-      </div>
-      {/* Add more items as needed */}
+    <div className="flex flex-col gap-3">
+      <Label htmlFor="date" className="px-1">
+        Date of birth
+      </Label>
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            id="date"
+            className="w-48 justify-between font-normal"
+          >
+            {date ? date.toLocaleDateString() : "Select date"}
+            <ChevronDownIcon />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto overflow-hidden p-2" align="start">
+          <Calendar
+            mode="single"
+            selected={date}
+            captionLayout="dropdown"
+            onSelect={(date) => {
+              setDate(date);
+              setOpen(false);
+            }}
+          />
+        </PopoverContent>
+      </Popover>
     </div>
   );
-};
-
-export default Sidebar;
+}

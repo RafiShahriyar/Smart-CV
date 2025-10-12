@@ -20,8 +20,7 @@ const CVPreview: React.FC<Props> = ({
   CVDataSkills,
 }) => {
   const cvRef = useRef<HTMLDivElement>(null);
-  
-  
+
   const exportPDF = async () => {
     if (!cvRef.current) return;
 
@@ -80,7 +79,6 @@ const CVPreview: React.FC<Props> = ({
                   .replace(/<\/ol>/g, "</ul>"),
               }}
             />
-
           </div>
         ))}
 
@@ -100,8 +98,14 @@ const CVPreview: React.FC<Props> = ({
               <p className="text-md font-semibold">{edu.school}</p>
               <p className="text-md font-semibold">{"CGPA: " + edu.cgpa}</p>
             </div>
-
-            <p>{edu.description} </p>
+            <div
+              className="max-w-none text-sm leading-tight space-y-1 ml-1"
+              dangerouslySetInnerHTML={{
+                __html: edu.description
+                  .replace(/<ol>/g, "<ul>")
+                  .replace(/<\/ol>/g, "</ul>"),
+              }}
+            />
           </div>
         ))}
 

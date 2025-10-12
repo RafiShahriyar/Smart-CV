@@ -8,7 +8,6 @@ import "react-quill-new/dist/quill.snow.css";
 // Prevent SSR issues
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
-
 interface Props {
   cvDataExperience: CVDataExperience[];
   setCvDataExperience: React.Dispatch<React.SetStateAction<CVDataExperience[]>>;
@@ -27,7 +26,13 @@ const ExperienceInfo: React.FC<Props> = ({
   const handleAddExperience = () => {
     setCvDataExperience([
       ...cvDataExperience,
-      { jobTitle: "", companyName: "", startDate: "", endDate: "", description: "" },
+      {
+        jobTitle: "",
+        companyName: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+      },
     ]);
     setOpenIndex(cvDataExperience.length);
   };
@@ -69,7 +74,11 @@ const ExperienceInfo: React.FC<Props> = ({
               </span>
 
               <div className="flex items-center gap-2">
-                {openIndex === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                {openIndex === index ? (
+                  <ChevronUp size={18} />
+                ) : (
+                  <ChevronDown size={18} />
+                )}
                 {cvDataExperience.length > 1 && (
                   <button
                     onClick={(e) => {
@@ -94,7 +103,9 @@ const ExperienceInfo: React.FC<Props> = ({
                   <input
                     type="text"
                     value={exp.jobTitle}
-                    onChange={(e) => handleChange(index, "jobTitle", e.target.value)}
+                    onChange={(e) =>
+                      handleChange(index, "jobTitle", e.target.value)
+                    }
                     className="border border-gray-400 w-full p-2 rounded text-sm outline-none"
                     placeholder="e.g. Software Engineer"
                   />
@@ -108,7 +119,9 @@ const ExperienceInfo: React.FC<Props> = ({
                   <input
                     type="text"
                     value={exp.companyName}
-                    onChange={(e) => handleChange(index, "companyName", e.target.value)}
+                    onChange={(e) =>
+                      handleChange(index, "companyName", e.target.value)
+                    }
                     className="border w-full p-2 rounded text-sm outline-none"
                     placeholder="e.g. Google"
                   />
@@ -123,7 +136,9 @@ const ExperienceInfo: React.FC<Props> = ({
                     <input
                       type="text"
                       value={exp.startDate}
-                      onChange={(e) => handleChange(index, "startDate", e.target.value)}
+                      onChange={(e) =>
+                        handleChange(index, "startDate", e.target.value)
+                      }
                       className="border w-full p-2 rounded text-sm outline-none"
                       placeholder="e.g. Jan 2020"
                     />
@@ -136,7 +151,9 @@ const ExperienceInfo: React.FC<Props> = ({
                     <input
                       type="text"
                       value={exp.endDate}
-                      onChange={(e) => handleChange(index, "endDate", e.target.value)}
+                      onChange={(e) =>
+                        handleChange(index, "endDate", e.target.value)
+                      }
                       className="border w-full p-2 rounded text-sm outline-none"
                       placeholder="e.g. Dec 2022 or Present"
                     />
@@ -191,30 +208,29 @@ const ExperienceInfo: React.FC<Props> = ({
       <div className="sticky bottom-0 bg-white p-6">
         {/* Progress bar */}
         <div className="flex gap-2 mb-4 py-6">
-            <div className="flex-1 border-2 border-gray-200"></div>
-            <div className="flex-1 border-2 border-purple-600"></div>
-            <div className="flex-1 border-2 border-gray-200"></div>
-            <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-purple-600"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
         </div>
-
 
         {/* Navigation buttons */}
         <div className="flex justify-between">
-            <button
+          <button
             className="px-20 py-2 rounded bg-gray-300"
             onClick={handlePreviousStep}
-            >
+          >
             Previous
-            </button>
-            <button
+          </button>
+          <button
             className="px-24 py-2 rounded border-2 border-purple-600 bg-purple-600 hover:bg-white hover:text-purple-600 text-white"
             onClick={handleNextStep}
-            >
+          >
             Next
-            </button>
+          </button>
         </div>
-       </div>
-
+      </div>
     </div>
   );
 };

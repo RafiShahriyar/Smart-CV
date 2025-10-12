@@ -142,6 +142,7 @@ const SkillsInfo: React.FC<Props> = ({
           <div className="flex-1 border-2 border-gray-200"></div>
           <div className="flex-1 border-2 border-gray-200"></div>
           <div className="flex-1 border-2 border-purple-600"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
         </div>
 
         {/* Navigation buttons */}

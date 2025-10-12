@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { CVDataProjects } from "../../cv-maker/page";
 import { Plus, Trash2, ChevronDown, ChevronUp } from "lucide-react";
+import dynamic from "next/dynamic";
+import "react-quill-new/dist/quill.snow.css";
+
+// Prevent SSR issues
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 interface Props {
   cvDataProjects: CVDataProjects[];
@@ -121,13 +126,20 @@ const ProjectsInfo: React.FC<Props> = ({
                   <label className="text-xs text-gray-500 transition-colors duration-300 group-focus-within:text-purple-600">
                     Description
                   </label>
-                  <textarea
+                  <ReactQuill
+                    theme="snow"
                     value={project.description}
-                    onChange={(e) =>
-                      handleChange(index, "description", e.target.value)
-                    }
+                    onChange={(e) => handleChange(index, "description", e)}
+                    placeholder="Describe your project details..."
                     className="border w-full p-2 rounded text-sm outline-none"
-                    placeholder="Describe your role and achievements..."
+                    modules={{
+                      toolbar: [
+                        ["bold", "italic", "underline", "strike"],
+                        [{ list: "ordered" }, { list: "bullet" }],
+                        ["link"],
+                        ["clean"],
+                      ],
+                    }}
                   />
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-purple-600 transition-all duration-300 group-focus-within:w-full"></span>
                 </div>
@@ -152,9 +164,10 @@ const ProjectsInfo: React.FC<Props> = ({
         {/* Progress bar */}
         <div className="flex gap-2 mb-4 py-6">
           <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
+          <div className="flex-1 border-2 border-gray-200"></div>
           <div className="flex-1 border-2 border-purple-600"></div>
-          <div className="flex-1 border-2 border-gray-200"></div>
-          <div className="flex-1 border-2 border-gray-200"></div>
         </div>
 
         {/* Navigation buttons */}
