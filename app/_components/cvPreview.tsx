@@ -72,13 +72,14 @@ const CVPreview: React.FC<Props> = ({
               </p>
             </div>
             <div
-              className="max-w-none text-sm leading-tight space-y-1 ml-1"
+              className="max-w-none text-sm ml-1"
               dangerouslySetInnerHTML={{
                 __html: exp.description
-                  .replace(/<ol>/g, "<ul>")
+                  .replace(/<ol>/g, "<ul style='margin:0; padding-left:1.2rem; list-style-type:disc;'>")
                   .replace(/<\/ol>/g, "</ul>"),
               }}
             />
+
           </div>
         ))}
 
@@ -99,13 +100,14 @@ const CVPreview: React.FC<Props> = ({
               <p className="text-md font-semibold">{"CGPA: " + edu.cgpa}</p>
             </div>
             <div
-              className="max-w-none text-sm leading-tight space-y-1 ml-1"
+              className="max-w-none text-sm ml-1"
               dangerouslySetInnerHTML={{
                 __html: edu.description
-                  .replace(/<ol>/g, "<ul>")
+                  .replace(/<ol>/g, "<ul style='margin:0; padding-left:1.2rem; list-style-type:disc;'>")
                   .replace(/<\/ol>/g, "</ul>"),
               }}
             />
+
           </div>
         ))}
 
